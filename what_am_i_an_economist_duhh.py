@@ -9,6 +9,7 @@ TAXES = 0.3  # начисления на оплату труда 30%
 NDS = 0.13  # подоходный налог 13%
 INTERNET = 10000  # руб за интернет
 _1C = 15000  # руб 1C
+OTHER_EXPENSES = 50000
 #
 
 # OFFLINE
@@ -83,7 +84,7 @@ def main():
     ONLINE += num_prep * TEACHER_SALARY * 12 * (1 + TAXES) * (1 + NDS)
     OFFLINE += num_prep * TEACHER_SALARY * 12 * (1 + TAXES) * (1 + NDS)
     OFFLINE += (num_stud_per_day_in_week * SQARE_PER_STUD + num_prep *
-                SQUARE_PER_TEACHER + SQUARE_COMM) * (RENT + COMMUNAL) * (1 + OTHERS_ROOMS) * 12
+                SQUARE_PER_TEACHER + SQUARE_COMM) * (RENT + COMMUNAL) * (1 + OTHERS_ROOMS) * 12 + OTHER_EXPENSES
  
     print('Стоимость онлайн обучения на 1 студента за 1 год: ' + str(ONLINE//num_stud) + ' рублей')
     print('Стоимость офлайн обучения на 1 студента за 1 год: ' + str(OFFLINE//num_stud) + ' рублей')
